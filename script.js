@@ -51,7 +51,23 @@ async function predict(){
 
     window.AppInventor.setWebViewString(mejorEmocion);
 
-}
+    }
+    let codigo = "";
+
+    if (mejorEmocion === "Feliz") {
+        codigo = "F";
+    }
+    else if (mejorEmocion === "Neutral") {
+        codigo = "N";
+    }
+    else if (mejorEmocion === "Triste") {
+        codigo = "T";
+    }
+
+    if (typeof window.AppInventor !== "undefined") {
+        window.AppInventor.setWebViewString(codigo);
+    }
+    
 }
 
 document.getElementById("btnIniciar").addEventListener("click", init);
