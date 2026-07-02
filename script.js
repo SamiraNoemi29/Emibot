@@ -42,10 +42,9 @@ async function predict(){
     console.log((prediction[i].probability*100).toFixed(2));
     document.getElementById("resultado").innerHTML = "<h2>" + mejorEmocion + "</h2>" + "<p>Confianza: " + (mayorProbabilidad * 100).toFixed(2) + "%</p>";
     }
-    if (window.AppInventor) {
+    if (typeof window.AppInventor !== "undefined") {
         window.AppInventor.setWebViewString(mejorEmocion);
-
-}
+    }
 }
 
 document.getElementById("btnIniciar").addEventListener("click", init);
