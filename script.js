@@ -21,6 +21,10 @@ async function init(){
 
     document.getElementById("webcam-container").appendChild(webcam.canvas);
     window.requestAnimationFrame(loop);
+
+    if (typeof window.AppInventor !== "undefined") {
+    window.AppInventor.setWebViewString("Hola desde JavaScript");
+}
 }
 
 async function loop(){
